@@ -32,14 +32,14 @@ const AddUser = (props) => {
   return (
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
-        <label htmlFor>Username</label>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
           value={enteredUsername}
           onChange={usernameChangeHandler}
         />
-        <label htmlFor>Age (Years)</label>
+        <label htmlFor="age">Age (Years)</label>
         <input
           id="age"
           type="number"
