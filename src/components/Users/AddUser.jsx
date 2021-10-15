@@ -10,7 +10,15 @@ const AddUser = (props) => {
   // This function adds an event listener that when onSubmit, it will not erase the input values, not reloading page.
   const addUserHandler = (event) => {
     event.preventDefault();
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+      return;
+    }
+    if (+enteredAge < 1) {
+      return;
+    }
     console.log(enteredUsername, enteredAge);
+    setEnteredUsername('');
+    setEnteredAge('');
   };
 
   const usernameChangeHandler = (event) => {
@@ -25,9 +33,19 @@ const AddUser = (props) => {
     <Card className={classes.input}>
       <form onSubmit={addUserHandler}>
         <label htmlFor>Username</label>
-        <input id="username" type="text" onChange={usernameChangeHandler} />
+        <input
+          id="username"
+          type="text"
+          value={enteredUsername}
+          onChange={usernameChangeHandler}
+        />
         <label htmlFor>Age (Years)</label>
-        <input id="age" type="number" onChange={ageChangeHandler} />
+        <input
+          id="age"
+          type="number"
+          value={enteredAge}
+          onChange={ageChangeHandler}
+        />
         <Button type="submit">Add User</Button>
       </form>
     </Card>
