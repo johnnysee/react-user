@@ -1,6 +1,7 @@
-import React from "react";
-import Card from "../UI/Card";
-import classes from "./AddUser.module.css";
+import React from 'react';
+import Card from '../UI/Card';
+import classes from './AddUser.module.css';
+import Button from '../UI/Button';
 
 const AddUser = (props) => {
   // This function adds an event listener that when onSubmit, it will not erase the input values, not reloading page.
@@ -15,7 +16,7 @@ const AddUser = (props) => {
         <input id="username" type="text" />
         <label htmlFor>Age (Years)</label>
         <input id="age" type="number" />
-        <button type="submit">Add User</button>
+        <Button type="submit">Add User</Button>
       </form>
     </Card>
   );
